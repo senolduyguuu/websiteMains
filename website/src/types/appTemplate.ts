@@ -11,8 +11,14 @@ export interface AppTemplate {
   repositoryUrl?: string;
   documentationUrl?: string;
   tags?: string[];
+  requirements?: string[];
   createdAt?: string;
   updatedAt?: string;
+  createdDate?: string;
+  lastModifiedDate?: string;
+  createdById?: string | null;
+  lastModifiedById?: string | null;
+  error?: string | null;
 }
 
 export interface AppTemplateResponse {

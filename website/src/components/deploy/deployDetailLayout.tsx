@@ -25,8 +25,8 @@ const DeployDetailLayout = ({ appId }: DeployDetailLayoutProps) => {
   });
 
   // Handle both array and single object responses
-  const appData = Array.isArray(appTemplateData?.data) 
-    ? appTemplateData.data[0] 
+  const appData = Array.isArray(appTemplateData?.data)
+    ? appTemplateData.data[0]
     : appTemplateData?.data || null;
 
   // Loading state
@@ -35,7 +35,9 @@ const DeployDetailLayout = ({ appId }: DeployDetailLayoutProps) => {
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#DB5F39] mx-auto mb-4"></div>
-          <p className="text-[hsl(var(--grey-200))]">Loading application details...</p>
+          <p className="text-[hsl(var(--grey-200))]">
+            Loading application details...
+          </p>
         </div>
       </div>
     );
@@ -51,7 +53,8 @@ const DeployDetailLayout = ({ appId }: DeployDetailLayoutProps) => {
             Application not found
           </h3>
           <p className="text-[hsl(var(--grey-200))]">
-            The application you're looking for doesn't exist or has been removed.
+            The application you're looking for doesn't exist or has been
+            removed.
           </p>
         </div>
       </div>
@@ -73,6 +76,12 @@ const DeployDetailLayout = ({ appId }: DeployDetailLayoutProps) => {
                 appName={appData.name}
                 description={appData.description}
                 overview={appData.description}
+                shortDescription={appData.shortDescription}
+                requirements={appData.requirements}
+                icon={appData.icon}
+                status={appData.status}
+                createdAt={appData.createdAt || appData.createdDate}
+                updatedAt={appData.updatedAt || appData.lastModifiedDate}
               />
             </div>
 
@@ -84,6 +93,10 @@ const DeployDetailLayout = ({ appId }: DeployDetailLayoutProps) => {
                 repository={appData.repositoryUrl || ""}
                 technologies={appData.tags || []}
                 version={appData.version}
+                status={appData.status}
+                createdAt={appData.createdAt || appData.createdDate}
+                updatedAt={appData.updatedAt || appData.lastModifiedDate}
+                requirements={appData.requirements}
               />
             </div>
           </div>
