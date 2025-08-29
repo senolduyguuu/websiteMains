@@ -115,154 +115,94 @@ const AppDetails = ({
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, delay: 0.2 }}
         whileHover={{ scale: 1.01 }}
-        className="bg-[hsl(var(--grey-600))]/30 backdrop-blur-sm rounded-2xl p-8 border border-[hsl(var(--grey-500))]/20"
+        className="bg-gradient-to-br from-[hsl(var(--grey-600))]/40 to-[hsl(var(--grey-600))]/20 backdrop-blur-sm rounded-2xl p-8 border border-[hsl(var(--orange-500))]/10"
       >
-        <motion.h2
+        <motion.div
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.4, delay: 0.3 }}
-          className="text-xl font-semibold text-white mb-4"
+          className="mb-6"
         >
-          Overview
-        </motion.h2>
+          <div className="flex items-center space-x-3 mb-4">
+            <div className="w-1 h-8 bg-[hsl(var(--orange-500))] rounded-full"></div>
+            <h2 className="text-2xl font-bold text-white">Overview</h2>
+          </div>
+          <div className="w-16 h-0.5 bg-[hsl(var(--orange-500))] rounded-full"></div>
+        </motion.div>
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.4 }}
-          className="text-[hsl(var(--grey-200))] leading-relaxed"
+          className="text-[hsl(var(--grey-200))] leading-relaxed text-lg"
         >
           {overview}
         </motion.p>
       </motion.div>
 
-      {/* Requirements Section */}
-      {requirements && requirements.length > 0 && (
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          whileHover={{ scale: 1.01 }}
-          className="bg-[hsl(var(--grey-600))]/30 backdrop-blur-sm rounded-2xl p-8 border border-[hsl(var(--grey-500))]/20"
+      {/* Key Features Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        whileHover={{ scale: 1.01 }}
+        className="bg-[hsl(var(--grey-600))]/30 backdrop-blur-sm rounded-2xl p-8 border border-[hsl(var(--grey-500))]/20"
+      >
+        <motion.h3
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
+          className="text-xl font-semibold text-white mb-6"
         >
-          <motion.h2
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: 0.35 }}
-            className="text-xl font-semibold text-white mb-4"
-          >
-            System Requirements
-          </motion.h2>
-          <div className="space-y-3">
-            {requirements.map((requirement, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.45 + index * 0.1 }}
-                className="flex items-center space-x-3"
-              >
-                <div className="w-2 h-2 bg-[hsl(var(--orange-500))] rounded-full"></div>
-                <span className="text-[hsl(var(--grey-200))]">
-                  {requirement}
-                </span>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      )}
-
-      {/* Features */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3 }}
-          whileHover={{ scale: 1.02, y: -5 }}
-          className="bg-[hsl(var(--grey-600))]/30 backdrop-blur-sm rounded-2xl p-6 border border-[hsl(var(--grey-500))]/20"
-        >
-          <motion.h3
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-            className="text-lg font-semibold text-white mb-3"
-          >
-            Easy Setup
-          </motion.h3>
-          <motion.p
+          Key Features
+        </motion.h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.5 }}
-            className="text-[hsl(var(--grey-200))] text-sm"
+            className="flex items-start space-x-3"
           >
-            Get started in minutes with our one-click deployment process.
-          </motion.p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4 }}
-          whileHover={{ scale: 1.02, y: -5 }}
-          className="bg-[hsl(var(--grey-600))]/30 backdrop-blur-sm rounded-2xl p-6 border border-[hsl(var(--grey-500))]/20"
-        >
-          <motion.h3
-            initial={{ opacity: 0, x: -10 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: 0.5 }}
-            className="text-lg font-semibold text-white mb-3"
-          >
-            Secure
-          </motion.h3>
-          <motion.p
+            <div className="w-2 h-2 bg-[hsl(var(--orange-500))] rounded-full mt-2 flex-shrink-0"></div>
+            <span className="text-[hsl(var(--grey-200))]">
+              Easy to use interface
+            </span>
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4, delay: 0.6 }}
-            className="text-[hsl(var(--grey-200))] text-sm"
+            className="flex items-start space-x-3"
           >
-            Enterprise-grade security with built-in authentication and
-            authorization.
-          </motion.p>
-        </motion.div>
-      </div>
-
-      {/* Metadata Section */}
-      {(createdAt || updatedAt) && (
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="bg-[hsl(var(--grey-600))]/20 backdrop-blur-sm rounded-2xl p-6 border border-[hsl(var(--grey-500))]/20"
-        >
-          <motion.h3
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.4, delay: 0.4 }}
-            className="text-lg font-semibold text-white mb-4"
+            <div className="w-2 h-2 bg-[hsl(var(--orange-500))] rounded-full mt-2 flex-shrink-0"></div>
+            <span className="text-[hsl(var(--grey-200))]">
+              Extensive customization options
+            </span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.7 }}
+            className="flex items-start space-x-3"
           >
-            Metadata
-          </motion.h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
-            {createdAt && (
-              <div>
-                <span className="text-[hsl(var(--grey-300))]">Created:</span>
-                <span className="text-[hsl(var(--grey-200))] ml-2">
-                  {new Date(createdAt).toLocaleDateString()}
-                </span>
-              </div>
-            )}
-            {updatedAt && (
-              <div>
-                <span className="text-[hsl(var(--grey-300))]">
-                  Last Updated:
-                </span>
-                <span className="text-[hsl(var(--grey-200))] ml-2">
-                  {new Date(updatedAt).toLocaleDateString()}
-                </span>
-              </div>
-            )}
-          </div>
-        </motion.div>
-      )}
+            <div className="w-2 h-2 bg-[hsl(var(--orange-500))] rounded-full mt-2 flex-shrink-0"></div>
+            <span className="text-[hsl(var(--grey-200))]">
+              Large community support
+            </span>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.4, delay: 0.8 }}
+            className="flex items-start space-x-3"
+          >
+            <div className="w-2 h-2 bg-[hsl(var(--orange-500))] rounded-full mt-2 flex-shrink-0"></div>
+            <span className="text-[hsl(var(--grey-200))]">
+              Regular updates and security
+            </span>
+          </motion.div>
+        </div>
+      </motion.div>
     </div>
   );
 };

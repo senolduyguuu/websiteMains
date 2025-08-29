@@ -53,7 +53,7 @@ const AppSidebar = ({
         </div>
       </motion.div>
 
-      {/* App Info Card with Deploy Button */}
+      {/* Main App Info Card */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -187,7 +187,7 @@ const AppSidebar = ({
             </motion.div>
           )}
 
-          {/* Requirements Summary */}
+          {/* System Requirements */}
           {requirements && requirements.length > 0 && (
             <motion.div
               initial={{ opacity: 0, x: -10 }}
@@ -195,40 +195,62 @@ const AppSidebar = ({
               transition={{ duration: 0.4, delay: 0.65 }}
             >
               <span className="text-xs font-medium text-[hsl(var(--grey-300))] uppercase tracking-wider">
-                Requirements ({requirements.length})
+                System Requirements
               </span>
-              <div className="mt-2 space-y-1">
-                {requirements.slice(0, 3).map((req, index) => (
+              <div className="space-y-2 mt-2">
+                {requirements.map((requirement, index) => (
                   <motion.div
                     key={index}
                     initial={{ opacity: 0, x: -5 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.3, delay: 0.75 + index * 0.1 }}
-                    className="text-xs text-[hsl(var(--grey-200))] flex items-center space-x-2"
+                    className="flex items-center space-x-2"
                   >
-                    <div className="w-1 h-1 bg-[hsl(var(--orange-500))] rounded-full"></div>
-                    <span className="truncate">{req}</span>
+                    <div className="w-2 h-2 bg-[hsl(var(--orange-500))] rounded-full"></div>
+                    <span className="text-sm text-[hsl(var(--grey-200))]">
+                      {requirement}
+                    </span>
                   </motion.div>
                 ))}
-                {requirements.length > 3 && (
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.3, delay: 0.85 }}
-                    className="text-xs text-[hsl(var(--grey-300))] italic"
-                  >
-                    +{requirements.length - 3} more...
-                  </motion.div>
-                )}
               </div>
             </motion.div>
           )}
 
-          {/* Deploy Button - Now inside the card */}
+          {/* Features */}
+          <div className="space-y-4">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.8 }}
+              className="bg-[hsl(var(--grey-500))]/20 rounded-xl p-4"
+            >
+              <h3 className="text-sm font-semibold text-white mb-2">
+                Easy Setup
+              </h3>
+              <p className="text-xs text-[hsl(var(--grey-200))]">
+                Get started in minutes with our one-click deployment process.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: 0.85 }}
+              className="bg-[hsl(var(--grey-500))]/20 rounded-xl p-4"
+            >
+              <h3 className="text-sm font-semibold text-white mb-2">Secure</h3>
+              <p className="text-xs text-[hsl(var(--grey-200))]">
+                Enterprise-grade security with built-in authentication and
+                authorization.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Deploy Button */}
           <motion.div
             initial={{ opacity: 0, y: 10 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.4, delay: 0.8 }}
+            transition={{ duration: 0.4, delay: 0.9 }}
             className="pt-4 border-t border-[hsl(var(--grey-500))]/20"
           >
             <motion.div
