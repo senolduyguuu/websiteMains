@@ -1,0 +1,388 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Arial, Helvetica, sans-serif;
+  /* overflow-y: hidden; */
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .shadow-logo {
+    box-shadow: 0px -1px 2px hsla(17, 74%, 55%, 0.49),
+      0px -3px 3px hsla(17, 74%, 55%, 0.43),
+      0px -6px 4px hsla(17, 74%, 55%, 0.25),
+      0px -11px 5px hsla(17, 74%, 55%, 0.07),
+      0px -18px 5px hsla(17, 74%, 55%, 0.01),
+      inset 0px -3px 0px hsla(17, 59%, 27%, 1);
+  }
+  .stroke-dashoffset-0 {
+    stroke-dashoffset: 0;
+  }
+  
+  .stroke-dashoffset-300 {
+    stroke-dashoffset: 300;
+  }
+}
+
+@layer base {
+  :root {
+    /* Neutral Colors */
+    --grey-0: 0 0% 100%;
+    --grey-50: 0 0% 91%;
+    --grey-100: 0 0% 73%;
+    --grey-200: 0 0% 60%;
+    --grey-300: 0 0% 42%;
+    --grey-400: 0 0% 30%;
+    --grey-500: 0 0% 13%;
+    --grey-600: 0 0% 12%;
+    --grey-700: 0 0% 9%;
+    --grey-800: 0 0% 7%;
+    --grey-900: 0 0% 5%;
+    --grey-950: 0 0% 0%;
+    --grey-960: 0 0% 94%;
+
+    /* Primary Colors */
+    --orange-50: 35 80% 95%;
+    --orange-100: 12 74% 86%;
+    --orange-200: 16 72% 79%;
+    --orange-300: 16 69% 69%;
+    --orange-400: 11 71% 63%;
+    --orange-500: 14 70% 54%;
+    --orange-600: 13 58% 49%;
+    --orange-700: 13 58% 38%;
+    --orange-800: 13 58% 29%;
+    --orange-900: 13 58% 23%;
+    --orange-950: 13 58% 14%;
+
+    /* Red Colors */
+    --red-50: 355 100% 97%;
+    --red-100: 355 98% 88%;
+    --red-200: 355 97% 81%;
+    --red-300: 355 96% 73%;
+    --red-400: 355 95% 68%;
+    --red-500: 355 95% 60%;
+    --red-600: 355 85% 55%;
+    --red-700: 355 67% 42%;
+    --red-800: 355 63% 33%;
+    --red-900: 355 61% 25%;
+    --red-950: 355 59% 18%;
+
+    /* Green Colors */
+    --green-50: 140 100% 96%;
+    --green-100: 140 52% 82%;
+    --green-200: 140 49% 74%;
+    --green-300: 140 48% 62%;
+    --green-400: 140 47% 55%;
+    --green-500: 140 72% 44%;
+    --green-600: 140 72% 40%;
+    --green-700: 140 72% 31%;
+    --green-800: 140 72% 24%;
+    --green-900: 140 72% 18%;
+    --green-950: 140 72% 12%;
+
+    /* Yellow Colors */
+    --yellow-50: 45 95% 95%;
+    --yellow-100: 45 89% 86%;
+    --yellow-200: 45 87% 77%;
+    --yellow-300: 42 94% 69%;
+    --yellow-400: 42 94% 63%;
+    --yellow-500: 42 94% 54%;
+    --yellow-600: 42 84% 49%;
+    --yellow-700: 42 84% 38%;
+    --yellow-800: 42 84% 30%;
+    --yellow-900: 42 84% 23%;
+    --yellow-950: 42 84% 15%;
+
+    --app-header: var(--grey-400);
+    --app-border: 0, 0%, 100%, 0.08;
+    --app-btn: var(--grey-500);
+    --app-btn-text: var(--grey-400);
+    --app-repo-text: var(--grey-400);
+    --app-bottom-text: var(--grey-200);
+    --app-import-text: var(--grey-100);
+    --background: var(--grey-500);
+    --foreground: var(--grey-700);
+    --tx-primary: var(--grey-0);
+    --tx-secondary: var(--grey-200);
+    --tx-base-secondary: var(--grey-300);
+    --card: var(--grey-700);
+    --card-foreground: var(--grey-50);
+    --popover: var(--grey-700);
+    --popover-foreground: var(--grey-50);
+    --primary: var(--orange-500);
+    --primary-foreground: var(--grey-700);
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 14.9%;
+    --input-color: 0, 0%, 100%, 0.08;
+    --icon-color: var(--grey-0);
+    --icon-disabled: var(--grey-400);
+    --github-icon: var(--grey-0);
+    --github-text: var(--grey-950);
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --radius: 0.5rem;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+  .dark {
+    /* Neutral Colors */
+    --grey-0: 0 0% 100%;
+    --grey-50: 0 0% 91%;
+    --grey-100: 0 0% 73%;
+    --grey-200: 0 0% 60%;
+    --grey-300: 0 0% 42%;
+    --grey-400: 0 0% 30%;
+    --grey-500: 0 0% 13%;
+    --grey-600: 0 0% 12%;
+    --grey-700: 0 0% 9%;
+    --grey-800: 0 0% 7%;
+    --grey-900: 0 0% 5%;
+    --grey-950: 0 0% 0%;
+    --grey-960: 0 0% 94%;
+
+    /* Primary Colors */
+    --orange-50: 35 80% 95%;
+    --orange-100: 12 74% 86%;
+    --orange-200: 16 72% 79%;
+    --orange-300: 16 69% 69%;
+    --orange-400: 11 71% 63%;
+    --orange-500: 14 70% 54%;
+    --orange-600: 13 58% 49%;
+    --orange-700: 13 58% 38%;
+    --orange-800: 13 58% 29%;
+    --orange-900: 13 58% 23%;
+    --orange-950: 13 58% 14%;
+
+    /* Red Colors */
+    --red-50: 355 100% 97%;
+    --red-100: 355 98% 88%;
+    --red-200: 355 97% 81%;
+    --red-300: 355 96% 73%;
+    --red-400: 355 95% 68%;
+    --red-500: 355 95% 60%;
+    --red-600: 355 85% 55%;
+    --red-700: 355 67% 42%;
+    --red-800: 355 63% 33%;
+    --red-900: 355 61% 25%;
+    --red-950: 355 59% 18%;
+
+    /* Green Colors */
+    --green-50: 140 100% 96%;
+    --green-100: 140 52% 82%;
+    --green-200: 140 49% 74%;
+    --green-300: 140 48% 62%;
+    --green-400: 140 47% 55%;
+    --green-500: 140 72% 44%;
+    --green-600: 140 72% 40%;
+    --green-700: 140 72% 31%;
+    --green-800: 140 72% 24%;
+    --green-900: 140 72% 18%;
+    --green-950: 140 72% 12%;
+
+    /* Yellow Colors */
+    --yellow-50: 45 95% 95%;
+    --yellow-100: 45 89% 86%;
+    --yellow-200: 45 87% 77%;
+    --yellow-300: 42 94% 69%;
+    --yellow-400: 42 94% 63%;
+    --yellow-500: 42 94% 54%;
+    --yellow-600: 42 84% 49%;
+    --yellow-700: 42 84% 38%;
+    --yellow-800: 42 84% 30%;
+    --yellow-900: 42 84% 23%;
+    --yellow-950: 42 84% 15%;
+
+    --app-header: var(--grey-400);
+    --app-border: 0, 0%, 100%, 0.08;
+    --app-btn: var(--grey-500);
+    --app-btn-text: var(--grey-400);
+    --app-repo-text: var(--grey-400);
+    --app-bottom-text: var(--grey-200);
+    --app-import-text: var(--grey-100);
+    --background: var(--grey-500);
+    --foreground: var(--grey-700);
+    --tx-primary: var(--grey-0);
+    --tx-secondary: var(--grey-200);
+    --tx-base-secondary: var(--grey-300);
+    --card: var(--grey-700);
+    --card-foreground: var(--grey-50);
+    --popover: var(--grey-700);
+    --popover-foreground: var(--grey-50);
+    --primary: var(--orange-500);
+    --primary-foreground: var(--grey-700);
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 20%;
+    --input: 0 0% 14.9%;
+    --input-color: 0, 0%, 100%, 0.08;
+    --icon-color: var(--grey-0);
+    --icon-disabled: var(--grey-400);
+    --github-icon: var(--grey-0);
+    --github-text: var(--grey-950);
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@keyframes gradientBorder {
+  0% {
+    border-image-source: linear-gradient(45deg, var(--color-1), var(--color-2));
+  }
+  33% {
+    border-image-source: linear-gradient(45deg, var(--color-2), var(--color-3));
+  }
+  66% {
+    border-image-source: linear-gradient(45deg, var(--color-3), var(--color-1));
+  }
+  100% {
+    border-image-source: linear-gradient(45deg, var(--color-1), var(--color-2));
+  }
+}
+
+@keyframes glow {
+  0% {
+    filter: drop-shadow(0 0 5px var(--color-1));
+  }
+  33% {
+    filter: drop-shadow(0 0 5px var(--color-2));
+  }
+  66% {
+    filter: drop-shadow(0 0 5px var(--color-3));
+  }
+  100% {
+    filter: drop-shadow(0 0 5px var(--color-1));
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.gradient-border {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 8px;
+  padding: 2px;
+  background: linear-gradient(
+    45deg,
+    var(--color-1),
+    var(--color-2),
+    var(--color-3, var(--color-1))
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: gradientBorder 5s linear infinite;
+}
+
+.tab-hover:hover {
+  animation: glow 5s linear infinite;
+}
+
+.animate-glow {
+  animation: glow 5s linear infinite;
+}
+
+.tab-list {
+  position: relative;
+  display: flex;
+  border-radius: 9999px;
+  padding: 2px;
+  justify-content: center;
+}
+
+.tab {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+  border-radius: 9999px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.tab[data-state="active"] {
+  color: white;
+}
+
+.tab-indicator {
+  position: absolute;
+  top: 2px;
+  left: 4px;
+  bottom: 2px;
+  background-color: hsl(var(--background));
+  border-radius: 8px;
+  transition: transform 0.3s cubic-bezier(0.25, 1.5, 0.5, 1), filter 0.3s ease;
+}
+
+.tab-list:hover .tab-indicator {
+  filter: drop-shadow(0 0 5px var(--color-1));
+  animation: glow 5s linear infinite;
+}

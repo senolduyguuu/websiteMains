@@ -1,0 +1,7 @@
+we're going to create a landing page from this empty next.js project im going to give every section seperately you have to generate the sections in a clear format always use given src/components/ui/button.tsx  and  src/components/ui/input.tsx  component if needed dont try to generate images just add a placeholder image
+
+always prefer to use the colors defined in tailwind with globals.css
+
+generate and add new sections based on design image provided make it pixel perfect
+
+always use motion library and docs for animation needs
